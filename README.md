@@ -1,4 +1,4 @@
-# launch-extension-content-consumption-events
+# "Content Consumption Events" Extension for Launch, by Adobe
 
 A set of Events for Launch, revolving about content consumption
 
