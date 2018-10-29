@@ -1,6 +1,6 @@
 {
   "name": "jexner-content-consumption-events",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides Events that help measure content consumption.",
   "main": "index.js",
   "scripts": {

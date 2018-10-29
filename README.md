@@ -16,7 +16,11 @@ This event works exactly like the above, except that the scroll depth in percent
 
 ### Threshold for scroll depth (in % of the page height)
 
+Specify a scrollable distance in % (such as "12.5" or "90")
 
+Once the visitor has scrolled past the distance, the Event will trigger.
+
+In the example above, and with this set to "90", the Event would trigger when the visitor scrolls down at least 180px.
 
 ## Common Settings
 
