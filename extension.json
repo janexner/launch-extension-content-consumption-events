@@ -1,0 +1,225 @@
+{
+  "displayName": "Content Consumption Events",
+  "name": "content-consumption-events",
+  "platform": "web",
+  "version": "1.0.0",
+  "description": "Provides Events that help measure content consumption.",
+  "author": {
+    "name": "Jan Exner <jexner@adobe.com>"
+  },
+  "viewBasePath": "src/view/",
+  "events": [
+    {
+      "displayName": "Scroll 25%",
+      "name": "scroll-25",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "initDelay": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "triggerOnce": {
+            "type": "boolean"
+          },
+          "fireOnShortPages": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "initDelay",
+          "triggerOnce",
+          "fireOnShortPages"
+        ],
+        "additionalProperties": false
+      },
+      "libPath": "src/lib/events/scroll25.js",
+      "viewPath": "events/scroll50.html"
+    },
+    {
+      "displayName": "Scroll 33%",
+      "name": "scroll-33",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "initDelay": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "triggerOnce": {
+            "type": "boolean"
+          },
+          "fireOnShortPages": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "initDelay",
+          "triggerOnce",
+          "fireOnShortPages"
+        ],
+        "additionalProperties": false
+      },
+      "libPath": "src/lib/events/scroll33.js",
+      "viewPath": "events/scroll50.html"
+    },
+    {
+      "displayName": "Scroll 50%",
+      "name": "scroll-50",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "initDelay": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "triggerOnce": {
+            "type": "boolean"
+          },
+          "fireOnShortPages": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "initDelay",
+          "triggerOnce",
+          "fireOnShortPages"
+        ],
+        "additionalProperties": false
+      },
+      "libPath": "src/lib/events/scroll50.js",
+      "viewPath": "events/scroll50.html"
+    },
+    {
+      "displayName": "Scroll 66%",
+      "name": "scroll-66",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "initDelay": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "triggerOnce": {
+            "type": "boolean"
+          },
+          "fireOnShortPages": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "initDelay",
+          "triggerOnce",
+          "fireOnShortPages"
+        ],
+        "additionalProperties": false
+      },
+      "libPath": "src/lib/events/scroll66.js",
+      "viewPath": "events/scroll50.html"
+    },
+    {
+      "displayName": "Scroll 75%",
+      "name": "scroll-75",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "initDelay": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "triggerOnce": {
+            "type": "boolean"
+          },
+          "fireOnShortPages": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "initDelay",
+          "triggerOnce",
+          "fireOnShortPages"
+        ],
+        "additionalProperties": false
+      },
+      "libPath": "src/lib/events/scroll75.js",
+      "viewPath": "events/scroll50.html"
+    },
+    {
+      "displayName": "Scroll 100%",
+      "name": "scroll-100",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "initDelay": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "triggerOnce": {
+            "type": "boolean"
+          },
+          "fireOnShortPages": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "initDelay",
+          "triggerOnce",
+          "fireOnShortPages"
+        ],
+        "additionalProperties": false
+      },
+      "libPath": "src/lib/events/scroll100.js",
+      "viewPath": "events/scroll50.html"
+    },
+    {
+      "displayName": "Scroll Depth",
+      "name": "scroll-depth",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "initDelay": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "targetDepth": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 100
+          },
+          "triggerOnce": {
+            "type": "boolean"
+          },
+          "fireOnShortPages": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "initDelay",
+          "targetDepth",
+          "triggerOnce",
+          "fireOnShortPages"
+        ],
+        "additionalProperties": false
+      },
+      "libPath": "src/lib/events/scrollDepth.js",
+      "viewPath": "events/scrollDepth.html"
+    }
+  ],
+  "sharedModules": [
+    {
+      "name": "get-page-height",
+      "libPath": "src/lib/sharedModules/getPageHeight.js"
+    },
+    {
+      "name": "attach-scroll-listener-if-necessary",
+      "libPath": "src/lib/sharedModules/attachScollListenerIfNecessary.js"
+    }
+  ]
+}
