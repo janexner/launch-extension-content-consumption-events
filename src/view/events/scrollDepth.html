@@ -32,20 +32,12 @@
       </p>
 
       <p>
-        Threshold for time spent (in seconds)
-        <input id="timeSpent" type="number">    
-      </p>
-      <p>
         Threshold for scroll depth (in % of the page height)
         <input id="scrollDepth" type="number">
       </p>
       <p>
         <input type="checkbox" id="triggerOnce" value="triggerOnce" checked />
         <label for="triggerOnce">Fire once per page only</label>
-      </p>
-      <p>
-        <input type="checkbox" id="fireOnShortPages" value="fireOnShortPages" checked />
-        <label for="fireOnShortPages">On short pages, fire after timeout</label>
       </p>
 
       <h2>Advanced configuration</h2>
@@ -65,42 +57,33 @@
       window.extensionBridge.register({
         init: function(info) {
           if (info.settings) {
-            document.querySelector("#timeSpent").value = info.settings.timeSpent;
             document.querySelector("#scrollDepth").value = info.settings.scrollDepth;
             document.querySelector("#triggerOnce").checked = info.settings.triggerOnce;
-            document.querySelector("#fireOnShortPages").checked = info.settings.fireOnShortPages;
             document.querySelector("#initDelay").value = info.settings.initDelay;
           } else {
             // let's set some sensible defaults
-            document.querySelector("#timeSpent").value = 15;
             document.querySelector("#scrollDepth").value = 50;
             document.querySelector("#triggerOnce").checked = true;
-            document.querySelector("#fireOnShortPages").checked = true;
             document.querySelector("#initDelay").value = 100;
           }
         },
 
         getSettings: function() {
           return {
-            timeSpent: document.querySelector("#timeSpent").value,
             scrollDepth: document.querySelector('#scrollDepth').value,
             triggerOnce: document.querySelector('#triggerOnce').checked,
-            fireOnShortPages: document.querySelector("#fireOnShortPages").checked,
             initDelay: document.querySelector("#initDelay").value
           }
         },
 
         validate: function() {
           var valid = false;
-          var timeSpent = document.querySelector("#timeSpent").value;
           var scrollDepth = document.querySelector("#scrollDepth").value;
           var initDelay = document.querySelector("#initDelay").value;
-          if ('undefined' !== typeof timeSpent && timeSpent && 'undefined' !== typeof scrollDepth && scrollDepth && 'undefined' !== typeof initDelay && initDelay) {
-            if (0 < timeSpent) {
-              if (0 < scrollDepth && 100 >= scrollDepth) {
-                if (0 < initDelay) {
-                  valid = true;
-                }
+          if ('undefined' !== typeof scrollDepth && scrollDepth && 'undefined' !== typeof initDelay && initDelay) {
+            if (0 < scrollDepth && 100 >= scrollDepth) {
+              if (0 < initDelay) {
+                valid = true;
               }
             }
           }

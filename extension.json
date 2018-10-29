@@ -22,15 +22,11 @@
           },
           "triggerOnce": {
             "type": "boolean"
-          },
-          "fireOnShortPages": {
-            "type": "boolean"
           }
         },
         "required": [
           "initDelay",
-          "triggerOnce",
-          "fireOnShortPages"
+          "triggerOnce"
         ],
         "additionalProperties": false
       },
@@ -50,15 +46,11 @@
           },
           "triggerOnce": {
             "type": "boolean"
-          },
-          "fireOnShortPages": {
-            "type": "boolean"
           }
         },
         "required": [
           "initDelay",
-          "triggerOnce",
-          "fireOnShortPages"
+          "triggerOnce"
         ],
         "additionalProperties": false
       },
@@ -78,15 +70,11 @@
           },
           "triggerOnce": {
             "type": "boolean"
-          },
-          "fireOnShortPages": {
-            "type": "boolean"
           }
         },
         "required": [
           "initDelay",
-          "triggerOnce",
-          "fireOnShortPages"
+          "triggerOnce"
         ],
         "additionalProperties": false
       },
@@ -106,15 +94,11 @@
           },
           "triggerOnce": {
             "type": "boolean"
-          },
-          "fireOnShortPages": {
-            "type": "boolean"
           }
         },
         "required": [
           "initDelay",
-          "triggerOnce",
-          "fireOnShortPages"
+          "triggerOnce"
         ],
         "additionalProperties": false
       },
@@ -134,15 +118,11 @@
           },
           "triggerOnce": {
             "type": "boolean"
-          },
-          "fireOnShortPages": {
-            "type": "boolean"
           }
         },
         "required": [
           "initDelay",
-          "triggerOnce",
-          "fireOnShortPages"
+          "triggerOnce"
         ],
         "additionalProperties": false
       },
@@ -162,15 +142,11 @@
           },
           "triggerOnce": {
             "type": "boolean"
-          },
-          "fireOnShortPages": {
-            "type": "boolean"
           }
         },
         "required": [
           "initDelay",
-          "triggerOnce",
-          "fireOnShortPages"
+          "triggerOnce"
         ],
         "additionalProperties": false
       },
@@ -195,16 +171,12 @@
           },
           "triggerOnce": {
             "type": "boolean"
-          },
-          "fireOnShortPages": {
-            "type": "boolean"
           }
         },
         "required": [
           "initDelay",
           "targetDepth",
-          "triggerOnce",
-          "fireOnShortPages"
+          "triggerOnce"
         ],
         "additionalProperties": false
       },
