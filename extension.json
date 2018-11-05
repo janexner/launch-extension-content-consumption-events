@@ -2,7 +2,7 @@
   "displayName": "Content Consumption Events",
   "name": "content-consumption-events",
   "platform": "web",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Provides Events that help measure content consumption.",
   "author": {
     "name": "Jan Exner <jexner@adobe.com>"
@@ -182,6 +182,80 @@
       },
       "libPath": "src/lib/events/scrollDepth.js",
       "viewPath": "events/scrollDepth.html"
+    }
+  ],
+  "conditions": [
+    {
+      "name": "cond-new-visit",
+      "displayName": "First hit of Visit",
+      "libPath": "src/lib/conditions/firstHitOrNewTC.js",
+      "viewPath": "conditions/firstHitOrNewTC.html",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "inactivityStartsNewVisit": {
+            "type": "boolean"
+          },
+          "trackingCodeStartsNewVisit": {
+            "type": "boolean"
+          },
+          "onlyPageViewStartsNewVisit": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "inactivityStartsNewVisit",
+          "trackingCodeStartsNewVisit",
+          "onlyPageViewStartsNewVisit"
+        ],
+        "dependencies": {
+          "inactivityStartsNewVisit": {
+            "properties": {
+              "inactivityIntervalInMinutes": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            },
+            "required": [
+              "inactivityIntervalInMinutes"
+            ]
+          },
+          "trackingCodeStartsNewVisit": {
+            "properties": {
+              "onlyNewTrackingCodeStartsNewVisit": {
+                "type": "boolean"
+              },
+              "trackingCodeRetrievalMethod": {
+                "type": "string",
+                "enum": [ "dataElement", "urlParameter" ]
+              },
+              "trackingCodeDataElementName": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "onlyNewTrackingCodeStartsNewVisit",
+              "trackingCodeRetrievalMethod"
+            ],
+            "anyOf": [
+              {
+                "properties": {
+                  "trackingCodeRetrievalMethod": { "enum": [ "dataElement" ] }
+                },
+                "required": [ "trackingCodeDataElementName" ]
+              },
+              {
+                "properties": {
+                  "trackingCodeRetrievalMethod": { "enum": [ "urlParameter" ] }
+                },
+                "required": [ "trackingCodeURLParameter" ]
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
     }
   ],
   "sharedModules": [
