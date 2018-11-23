@@ -2,12 +2,13 @@
   "displayName": "Content Consumption Events",
   "name": "content-consumption-events",
   "platform": "web",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Provides Events that help measure content consumption.",
   "author": {
     "name": "Jan Exner <jexner@adobe.com>"
   },
   "viewBasePath": "src/view/",
+  "iconPath": "resources/icons/logo.svg",
   "events": [
     {
       "displayName": "Scroll 25%",

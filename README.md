@@ -22,6 +22,10 @@ Once the visitor has scrolled past the distance, the Event will trigger.
 
 In the example above, and with this set to "90", the Event would trigger when the visitor scrolls down at least 180px.
 
+"Scroll Depth actually read"
+
+Configurable with depth, reading speed (default 200wpm) and word count (takes Data Elements!), tries to only fire if visitor actually read down to the given scroll depth, rather than scrolling down quickly.
+
 ## Common Settings
 
 All Events come with 2 settings:
