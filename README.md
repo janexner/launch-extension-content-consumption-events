@@ -4,7 +4,7 @@ A set of Events for Launch, revolving about content consumption
 
 ## Events provided
 
-"Scroll 25%", "Scroll 33%", "Scroll 50%", "Scroll 66%", "Scroll 75%", and "Scroll 100%" 
+"Scroll 25%", "Scroll 33%", "Scroll 50%", "Scroll 66%", "Scroll 75%", and "Scroll 100%"
 
 These events fire when a visitor has scrolled 25%/33%/50%/66%/75%/100% of the scrollable distance on the page.
 

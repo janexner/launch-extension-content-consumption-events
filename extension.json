@@ -1,12 +1,14 @@
 {
   "displayName": "Content Consumption Events",
-  "name": "content-consumption-events",
+  "name": "ags055-content-consumption-events",
   "platform": "web",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Provides Events that help measure content consumption.",
   "author": {
-    "name": "Jan Exner <jexner@adobe.com>"
+    "name": "Adobe Consulting - Jan Exner",
+    "email": "jexner@adobe.com"
   },
+  "main": "src/lib/main.js",
   "viewBasePath": "src/view/",
   "iconPath": "resources/icons/logo.svg",
   "events": [
@@ -14,12 +16,13 @@
       "displayName": "Scroll 25%",
       "name": "scroll-25",
       "schema": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "properties": {
           "initDelay": {
             "type": "number",
-            "exclusiveMinimum": 0
+            "minimum": 0,
+            "exclusiveMinimum": true
           },
           "triggerOnce": {
             "type": "boolean"
@@ -38,12 +41,13 @@
       "displayName": "Scroll 33%",
       "name": "scroll-33",
       "schema": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "properties": {
           "initDelay": {
             "type": "number",
-            "exclusiveMinimum": 0
+            "minimum": 0,
+            "exclusiveMinimum": true
           },
           "triggerOnce": {
             "type": "boolean"
@@ -62,12 +66,13 @@
       "displayName": "Scroll 50%",
       "name": "scroll-50",
       "schema": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "properties": {
           "initDelay": {
             "type": "number",
-            "exclusiveMinimum": 0
+            "minimum": 0,
+            "exclusiveMinimum": true
           },
           "triggerOnce": {
             "type": "boolean"
@@ -86,12 +91,13 @@
       "displayName": "Scroll 66%",
       "name": "scroll-66",
       "schema": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "properties": {
           "initDelay": {
             "type": "number",
-            "exclusiveMinimum": 0
+            "minimum": 0,
+            "exclusiveMinimum": true
           },
           "triggerOnce": {
             "type": "boolean"
@@ -110,12 +116,13 @@
       "displayName": "Scroll 75%",
       "name": "scroll-75",
       "schema": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "properties": {
           "initDelay": {
             "type": "number",
-            "exclusiveMinimum": 0
+            "minimum": 0,
+            "exclusiveMinimum": true
           },
           "triggerOnce": {
             "type": "boolean"
@@ -134,12 +141,13 @@
       "displayName": "Scroll 100%",
       "name": "scroll-100",
       "schema": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "properties": {
           "initDelay": {
             "type": "number",
-            "exclusiveMinimum": 0
+            "minimum": 0,
+            "exclusiveMinimum": true
           },
           "triggerOnce": {
             "type": "boolean"
@@ -158,16 +166,18 @@
       "displayName": "Scroll Depth",
       "name": "scroll-depth",
       "schema": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "properties": {
           "initDelay": {
             "type": "number",
-            "exclusiveMinimum": 0
+            "minimum": 0,
+            "exclusiveMinimum": true
           },
           "targetDepth": {
             "type": "number",
-            "exclusiveMinimum": 0,
+            "minimum": 0,
+            "exclusiveMinimum": true,
             "maximum": 100
           },
           "triggerOnce": {
@@ -183,6 +193,18 @@
       },
       "libPath": "src/lib/events/scrollDepth.js",
       "viewPath": "events/scrollDepth.html"
+    },
+    {
+      "displayName": "Visit Duration Timer Elapsed",
+      "name": "visit-duration-elapsed",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "libPath": "src/lib/events/visitDurationElapsed.js",
+      "viewPath": "events/visitDurationElapsed.js"
     }
   ],
   "conditions": [
@@ -192,7 +214,7 @@
       "libPath": "src/lib/conditions/firstHitOrNewTC.js",
       "viewPath": "conditions/firstHitOrNewTC.html",
       "schema": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "properties": {
           "inactivityStartsNewVisit": {
@@ -215,7 +237,8 @@
             "properties": {
               "inactivityIntervalInMinutes": {
                 "type": "number",
-                "exclusiveMinimum": 0
+                "minimum": 0,
+                "exclusiveMinimum": true
               }
             },
             "required": [
@@ -257,16 +280,34 @@
         },
         "additionalProperties": false
       }
-    }
-  ],
-  "sharedModules": [
-    {
-      "name": "get-page-height",
-      "libPath": "src/lib/sharedModules/getPageHeight.js"
     },
     {
-      "name": "attach-scroll-listener-if-necessary",
-      "libPath": "src/lib/sharedModules/attachScollListenerIfNecessary.js"
+      "displayName": "Visit Duration not yet Elapsed",
+      "name": "cond-visit-duration-not-yet-elapsed",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "libPath": "src/lib/conditions/visitDurationNotYetElapsed.js",
+      "viewPath": "events/visitDurationNotYetElapsed.html"
     }
-  ]
-}
+  ],
+  "dataElements": [
+    {
+      "displayName": "Time since Visit started",
+      "name": "time-since-visit-started",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+          "settings": {
+            "type": "string"
+          }
+        }
+      },
+      "libPath": "src/lib/dataElements/timeSinceVisitStarted.js",
+      "viewPath": "dataElements/timeSinceVisitStarted.html"
+    }
+  ]}
